@@ -35,7 +35,8 @@ export async function addTask(req, res) {
 
 // Update Tasks
 export async function updateTask(req, res) {
-    const { done, uid } = req.body;
+    const { uid } = req.params;
+    const { done, id } = req.body;
 
     if(!uid) {
         res.status(401).send({success: false, message: "Not a valid request"});
